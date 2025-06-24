@@ -52,7 +52,7 @@ def preprocess_function(examples, tokenizer, processor):
 
     # Tokenize targets and assign them to "labels"
     with tokenizer.as_target_tokenizer():
-        labels = tokenizer(targets, max_length=512, truncation=True)
+        labels = tokenizer(targets, max_length=512, truncation=True, padding="max_length")
 
     # Add processed outputs to model_inputs
     model_inputs["labels"] = labels["input_ids"]  # Decoder labels
