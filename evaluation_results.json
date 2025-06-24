@@ -1,0 +1,42 @@
+{
+  "model_results": {
+    "Baseline": {
+      "model_name": "Baseline",
+      "valid_syntax_rate": 0.9333333333333333,
+      "mean_iou": 0.011400201835920467,
+      "num_samples_evaluated": 30,
+      "num_iou_samples": 5,
+      "sample_generated_codes": {
+        "sample_0": "result = cq.Workplane('XY').circle(2.7).extrude(5.7)",
+        "sample_1": "result = cq.Workplane('XY').box(7.6, 1.2, 10.5)",
+        "sample_2": "result = cq.Workplane('XY').box(4.8, 4.7, 24.6).faces('>Z').workplane().rect(17.4, 10.8, forConstruction=True).vertices().cboreHole(0.3, 0.1, 0.4)"
+      }
+    },
+    "Enhanced": {
+      "model_name": "Enhanced",
+      "valid_syntax_rate": 1.0,
+      "mean_iou": 0.08280025486095113,
+      "num_samples_evaluated": 30,
+      "num_iou_samples": 5,
+      "sample_generated_codes": {
+        "sample_0": "result = cq.Workplane('XY').box(8.6, 8.2, 21.1).faces('>Z').workplane().rect(8.2, 2.4, forConstruction=True).vertices().cboreHole(0.5, 1.4, 0.4)",
+        "sample_1": "result = cq.Workplane('XY').rect(10.6, 17.9).extrude(4.7).faces('>Z').workplane().hole(0.3)",
+        "sample_2": "result = cq.Workplane('XY').circle(9.7).extrude(13.9).faces('>Z').hole(0.3)"
+      }
+    }
+  },
+  "comparisons": {
+    "Baseline_vs_Enhanced": {
+      "vsr_improvement": 0.06666666666666665,
+      "iou_improvement": 0.07140005302503066,
+      "relative_vsr_improvement": 0.07142857142857141,
+      "relative_iou_improvement": 6.263051659318778
+    }
+  },
+  "config": {
+    "model_name": "baseline",
+    "max_length": 256,
+    "temperature": 0.7,
+    "num_samples": 50
+  }
+}
